@@ -1,8 +1,8 @@
 /* FONTS  */
 @font-face {
   font-family: 'Public Sans';
-  src: url('PublicSans-Regular.woff2') format('woff2'),
-      url('PublicSans-Regular.woff') format('woff');
+  src: url('../fonts/PublicSans-Regular.woff2') format('woff2'),
+      url('../fonts/PublicSans-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -10,8 +10,8 @@
 
 @font-face {
   font-family: 'Public Sans';
-  src: url('PublicSans-Thin.woff2') format('woff2'),
-      url('PublicSans-Thin.woff') format('woff');
+  src: url('../fonts/PublicSans-Thin.woff2') format('woff2'),
+      url('../fonts/PublicSans-Thin.woff') format('woff');
   font-weight: 100;
   font-style: normal;
   font-display: swap;
@@ -19,13 +19,19 @@
 
 @font-face {
   font-family: 'Public Sans';
-  src: url('PublicSans-Medium.woff2') format('woff2'),
-      url('PublicSans-Medium.woff') format('woff');
+  src: url('../fonts/PublicSans-Medium.woff2') format('woff2'),
+      url('../fonts/PublicSans-Medium.woff') format('woff');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
-
+/* custom property  */
+:root{
+  --linear-gradient: linear-gradient(135deg, #33D35E 0%, #2AB6D9 99.58%);
+  --light-green: #30C88F;
+  --dark: #2D314D;
+  --text-color: #9597A5;
+}
 /* Common styles */
 html{
   box-sizing: border-box;
@@ -36,11 +42,11 @@ html{
 body{
   padding: 0;
   margin: 0;
-  font-family: "Rubik", "Arial", sans-serif;
-  font-weight: 500;
-  font-size: 19px;
-  line-height: 23px;
-  color: #515151;
+  font-family: "Public Sans", "Arial", sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 26px;
+  color: var(--text-color);
 }
 .visually-hidden {
   position: absolute;
@@ -55,4 +61,63 @@ body{
 img{
   max-width: 100%;
   display: block;
+}
+.container{
+  max-width: 1310px;
+  padding-left: 100px;
+  padding-right: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.flex{
+  display: flex;
+  align-items: center;
+}
+.list{
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+/* SITE HEADER  */
+.site-header {
+  padding-top: 18px;
+  padding-bottom: 18px;
+  background-color: #fff;
+}
+.site-nav__container {
+  justify-content: space-between;
+}
+.logo {
+  margin-right: 20px;
+}
+.site-nav__list {
+  margin-right: 20px;
+}
+.site-nav__item:not(:first-child) {
+  margin-left: 30px;
+}
+.site-nav__link {
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: -0.107692px;
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.site-nav__link:hover{
+  color: var(--dark);
+}
+.site-nav__button {
+  padding: 8px 34px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 28px;
+  background: var(--linear-gradient);
+  border-radius: 22px;  
+  color: #fff;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+.site-nav__button:hover{
+  opacity: 0.4;
 }
